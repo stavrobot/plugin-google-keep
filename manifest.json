@@ -11,12 +11,8 @@
       "required": true
     },
     "master_token": {
-      "description": "Long-lived master token obtained by the init script. Set automatically after init runs.",
+      "description": "Long-lived master token. Set automatically on first tool run by exchanging the oauth_token.",
       "required": false
     }
-  },
-  "init": {
-    "entrypoint": "init.py",
-    "async": false
   }
 }
