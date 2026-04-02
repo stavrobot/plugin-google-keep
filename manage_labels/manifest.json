@@ -1,0 +1,15 @@
+{
+  "name": "manage_labels",
+  "description": "List, create, or delete Google Keep labels.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "action": {
+      "type": "string",
+      "description": "The action to perform: list, create, or delete."
+    },
+    "name": {
+      "type": "string",
+      "description": "The label name. Required for create and delete actions."
+    }
+  }
+}

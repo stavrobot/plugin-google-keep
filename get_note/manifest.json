@@ -1,0 +1,11 @@
+{
+  "name": "get_note",
+  "description": "Get the full content of a Google Keep note by ID.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "note_id": {
+      "type": "string",
+      "description": "The ID of the note to retrieve."
+    }
+  }
+}

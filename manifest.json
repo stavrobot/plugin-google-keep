@@ -1,0 +1,22 @@
+{
+  "name": "google-keep",
+  "description": "Manage Google Keep notes, checklists, and labels.",
+  "config": {
+    "email": {
+      "description": "Google account email address.",
+      "required": true
+    },
+    "oauth_token": {
+      "description": "OAuth token obtained from the Google EmbeddedSetup page. See README for instructions.",
+      "required": true
+    },
+    "master_token": {
+      "description": "Long-lived master token obtained by the init script. Set automatically after init runs.",
+      "required": false
+    }
+  },
+  "init": {
+    "entrypoint": "init.py",
+    "async": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "list_notes",
+  "description": "List and search Google Keep notes. Supports filtering by text query, label, pinned state, and trashed state. Returns up to 50 note summaries.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "query": {
+      "type": "string",
+      "description": "Text to search for in note titles and content."
+    },
+    "label": {
+      "type": "string",
+      "description": "Filter notes by label name (case-insensitive)."
+    },
+    "pinned": {
+      "type": "boolean",
+      "description": "If true, return only pinned notes. If false, return only unpinned notes. Omit to return both."
+    },
+    "trashed": {
+      "type": "boolean",
+      "description": "If true, return only trashed notes. Defaults to false (non-trashed notes only)."
+    }
+  }
+}

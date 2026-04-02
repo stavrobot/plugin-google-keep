@@ -1,0 +1,15 @@
+{
+  "name": "delete_note",
+  "description": "Trash or restore a Google Keep note by ID.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "note_id": {
+      "type": "string",
+      "description": "The ID of the note to trash or restore."
+    },
+    "restore": {
+      "type": "boolean",
+      "description": "If true, restore (untrash) the note instead of trashing it."
+    }
+  }
+}

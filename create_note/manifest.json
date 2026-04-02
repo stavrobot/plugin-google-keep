@@ -1,0 +1,27 @@
+{
+  "name": "create_note",
+  "description": "Create a new Google Keep text note or checklist, optionally with labels and pinning.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "title": {
+      "type": "string",
+      "description": "The title of the note."
+    },
+    "text": {
+      "type": "string",
+      "description": "The body text of the note. Used when creating a text note (i.e. when items is not provided)."
+    },
+    "items": {
+      "type": "string",
+      "description": "Newline-separated checklist items. When provided, a checklist is created instead of a text note."
+    },
+    "labels": {
+      "type": "string",
+      "description": "Comma-separated label names to apply to the note. Labels that do not exist are silently skipped."
+    },
+    "pinned": {
+      "type": "boolean",
+      "description": "Whether to pin the note."
+    }
+  }
+}

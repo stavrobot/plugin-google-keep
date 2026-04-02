@@ -1,0 +1,39 @@
+{
+  "name": "update_note",
+  "description": "Update an existing Google Keep note. Can change title, text, pin status, and manage checklist items.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "note_id": {
+      "type": "string",
+      "description": "The ID of the note to update."
+    },
+    "title": {
+      "type": "string",
+      "description": "New title for the note."
+    },
+    "text": {
+      "type": "string",
+      "description": "New text body for text notes. Replaces the existing text entirely."
+    },
+    "pinned": {
+      "type": "boolean",
+      "description": "Whether the note should be pinned."
+    },
+    "add_items": {
+      "type": "string",
+      "description": "Newline-separated items to append to a checklist note."
+    },
+    "check_items": {
+      "type": "string",
+      "description": "Newline-separated item texts to mark as checked in a checklist note."
+    },
+    "uncheck_items": {
+      "type": "string",
+      "description": "Newline-separated item texts to mark as unchecked in a checklist note."
+    },
+    "delete_items": {
+      "type": "string",
+      "description": "Newline-separated item texts to remove from a checklist note."
+    }
+  }
+}
