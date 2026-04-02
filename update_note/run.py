@@ -10,6 +10,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
 from keep_auth import authenticate
 
+import gkeepapi.node
+
 
 def main() -> None:
     """Update an existing Google Keep note by ID, applying whichever fields are provided."""
@@ -27,10 +29,19 @@ def main() -> None:
         note.title = params["title"]
 
     if "text" in params:
+        if not isinstance(note, gkeepapi.node.Note):
+            print(f"Note {note_id} is not a text note; cannot set text", file=sys.stderr)
+            sys.exit(1)
         note.text = params["text"]
 
     if "pinned" in params:
         note.pinned = params["pinned"]
+
+    checklist_keys = {"add_items", "check_items", "uncheck_items", "delete_items"}
+    if checklist_keys & params.keys():
+        if not isinstance(note, gkeepapi.node.List):
+            print(f"Note {note_id} is not a checklist; cannot perform checklist operations", file=sys.stderr)
+            sys.exit(1)
 
     if "add_items" in params:
         for item_text in params["add_items"].split("\n"):
@@ -57,8 +68,6 @@ def main() -> None:
                 item.delete()
 
     keep.sync()
-
-    import gkeepapi.node
 
     note_type = "list" if isinstance(note, gkeepapi.node.List) else "note"
     json.dump(

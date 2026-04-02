@@ -1,6 +1,6 @@
 ---
 id: pg-nko0
-status: in_progress
+status: closed
 deps: [pg-g53o, pg-t7u5, pg-i2n7, pg-nemp, pg-qqoo, pg-3nx2, pg-so2x, pg-l1sq, pg-500z]
 links: []
 created: 2026-04-02T21:19:18Z

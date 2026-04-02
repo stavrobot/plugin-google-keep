@@ -24,7 +24,7 @@ def main() -> None:
     keep = authenticate()
 
     if items is not None:
-        note = keep.createList(title, [(item, False) for item in items.split("\n")])
+        note = keep.createList(title, [(item, False) for item in [i.strip() for i in items.split("\n") if i.strip()]])
         note_type = "list"
     else:
         note = keep.createNote(title, text)
